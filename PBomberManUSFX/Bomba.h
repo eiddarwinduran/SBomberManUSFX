@@ -2,14 +2,18 @@
 class Bomba
 {
 private:
-	int tamañoBomba;
+	int altoBomba;
+	int anchoBomba;
 	int tiempoExplosion;
 
 
 public:
 
-	int getTamañoBomba() { return tamañoBomba; }
-	void setTamañoBomba(int _tamañoBomba) { tamañoBomba = _tamañoBomba; }
+	int getAltoBomba() { return altoBomba; }
+	void setAltoBomba(int _altoBomba) { altoBomba = _altoBomba; }
+
+	int getAnchoBomba() { return anchoBomba; }
+	void setAnchoBomba(int _anchoBomba) { anchoBomba = _anchoBomba; }
 
 	int getTiempoExplosion() { return tiempoExplosion; }
 	void setTiempoExplosion(int _tiempoExplosion) { tiempoExplosion = _tiempoExplosion; }
