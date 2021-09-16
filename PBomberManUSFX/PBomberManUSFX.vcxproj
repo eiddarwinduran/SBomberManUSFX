@@ -145,6 +145,7 @@
     <ClInclude Include="Escenario.h" />
     <ClInclude Include="Muro.h" />
     <ClInclude Include="Puntaje.h" />
+    <ClInclude Include="superBomba.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Bomba.cpp" />
@@ -153,6 +154,7 @@
     <ClCompile Include="Escenario.cpp" />
     <ClCompile Include="Muro.cpp" />
     <ClCompile Include="Puntaje.cpp" />
+    <ClCompile Include="superBomba.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

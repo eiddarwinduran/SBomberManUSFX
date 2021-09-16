@@ -6,6 +6,9 @@ private:
 	int altoAvatar;
 	int velocidadAvatar;
 	int vidas;
+	int posicionX;
+	int posicionY;
+
 public:
 	int getAnchoAvatar() { return anchoAvatar; }
 	void setAnchoAvatar(int _anchoAvatar) { anchoAvatar = _anchoAvatar; }
@@ -18,6 +21,12 @@ public:
 
 	int getVidas() { return vidas; }
 	void setVidas(int _vidas) { vidas = _vidas; }
+
+	int getPosicionX() { return posicionX; }
+	void setPosicionX(int _posicionX) { posicionX = _posicionX; }
+
+	int getPosicionY() { return posicionY; }
+	void setPosicionY(int _posicionY) { posicionY = _posicionY; }
 
 	void Morir();
 	void Correr();

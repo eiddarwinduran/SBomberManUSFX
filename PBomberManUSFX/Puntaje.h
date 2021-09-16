@@ -11,5 +11,8 @@ public:
 
 	int getPuntaje() { return puntaje; }
 	void serPuntaje(int _puntaje) { puntaje = _puntaje; }
+
+	void CalcularPuntaje();
+
 };
 
