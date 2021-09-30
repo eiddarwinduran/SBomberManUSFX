@@ -21,7 +21,7 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{bcce9524-0bef-4a14-b02b-cbb7242319c6}</ProjectGuid>
+    <ProjectGuid>{BCCE9524-0BEF-4A14-B02B-CBB7242319C6}</ProjectGuid>
     <RootNamespace>PBomberManUSFX</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
@@ -78,6 +78,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\vclibs\SDL2_ttf\include;C:\vclibs\SDL2_mixer\include;C:\vclibs\SDL2_image\include;C:\vclibs\SDL2\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\vclibs\SDL2_ttf\lib\x64;C:\vclibs\SDL2_mixer\lib\x64;C:\vclibs\SDL2_image\lib\x64;C:\vclibs\SDL2\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -120,6 +122,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_mixer.lib;SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -139,22 +142,33 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Bomba.h" />
-    <ClInclude Include="Bomber.h" />
-    <ClInclude Include="Enemigo.h" />
-    <ClInclude Include="Escenario.h" />
-    <ClInclude Include="Muro.h" />
-    <ClInclude Include="Puntaje.h" />
-    <ClInclude Include="superBomba.h" />
+    <ClCompile Include="Bomber.cpp" />
+    <ClCompile Include="Detonador.cpp" />
+    <ClCompile Include="Enemigo.cpp" />
+    <ClCompile Include="Explosion.cpp" />
+    <ClCompile Include="GameActor.cpp" />
+    <ClCompile Include="GameDirecctions.h" />
+    <ClCompile Include="GameManager.cpp" />
+    <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="Muro.cpp" />
+    <ClCompile Include="MuroMetalico.cpp" />
+    <ClCompile Include="principal.cpp" />
+    <ClCompile Include="Texture.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Bomba.cpp" />
-    <ClCompile Include="Bomber.cpp" />
-    <ClCompile Include="Enemigo.cpp" />
-    <ClCompile Include="Escenario.cpp" />
-    <ClCompile Include="Muro.cpp" />
-    <ClCompile Include="Puntaje.cpp" />
-    <ClCompile Include="superBomba.cpp" />
+    <ClInclude Include="Bomber.h" />
+    <ClInclude Include="Detonador.h" />
+    <ClInclude Include="Enemigo.h" />
+    <ClInclude Include="Explosion.h" />
+    <ClInclude Include="GameActor.h" />
+    <ClInclude Include="GameManager.h" />
+    <ClInclude Include="GameObject.h" />
+    <ClInclude Include="Muro.h" />
+    <ClInclude Include="MuroMetalico.h" />
+    <ClInclude Include="Texture.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="resources\bomber.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
