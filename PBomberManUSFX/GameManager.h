@@ -7,13 +7,16 @@
 
 #include <SDL.h>
 #include <SDL_image.h>
-#include "Bomber.h"
-#include "MuroMetalico.h"
+#include "Bomberman.h"
+#include "MuroMetal.h"
+#include "MapGenerator.h"
+#include "system/KeyboardInput.h"
+#include "TilesGraph.h"
 
 using namespace std;
 
-const int SCREEN_WIDTH = 800;
-const int SCREEN_HEIGHT = 600;
+const int SCREEN_WIDTH = 850;
+const int SCREEN_HEIGHT = 510;
   
 class GameManager
 {
@@ -26,21 +29,26 @@ private:
 
     //Current displayed texture
     SDL_Texture* gTexture = nullptr;
-
-    Texture* texturaBomber1;
-    Texture* texturaBomber2;
-    Texture* texturaMuroMetalico;
-
+       
     vector<GameObject*> actoresJuego;
-    
-public:
-    GameManager();
-	int onExecute();
-    bool onInit();
-    void close();
-    
-    //Loads individual image as texture
-    SDL_Texture* loadTexture(std::string path);
+    MapGenerator* generadorMapa;
+    KeyboardInput* keyboardInput;
 
-    bool loadMedia();
+
+    SDL_Event evento;
+    bool enEjecucion;
+
+    TilesGraph* tilesGraphGM;
+public:
+    // Constructores & destructores
+    GameManager();
+
+    // Metodos especializados
+    bool onInit();
+    bool loadContent();
+    int onExecute();
+    void onEvent(SDL_Event* _event);
+    void onLoop();
+    void onRender();
+    void close();    
 };

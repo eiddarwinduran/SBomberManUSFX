@@ -21,7 +21,7 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{BCCE9524-0BEF-4A14-B02B-CBB7242319C6}</ProjectGuid>
+    <ProjectGuid>{b4b2c2b6-a909-4d8a-89bd-370490ad35c9}</ProjectGuid>
     <RootNamespace>PBomberManUSFX</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
@@ -79,7 +79,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
     <IncludePath>C:\vclibs\SDL2_ttf\include;C:\vclibs\SDL2_mixer\include;C:\vclibs\SDL2_image\include;C:\vclibs\SDL2\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\vclibs\SDL2_ttf\lib\x64;C:\vclibs\SDL2_mixer\lib\x64;C:\vclibs\SDL2_image\lib\x64;C:\vclibs\SDL2\lib\x64;$(LibraryPath)</LibraryPath>
+    <LibraryPath>C:\vclibs\SDL2_image\lib\x64;C:\vclibs\SDL2_ttf\lib\x64;C:\vclibs\SDL2_mixer\lib\x64;C:\vclibs\SDL2\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -142,7 +142,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Bomber.cpp" />
+    <ClCompile Include="Bomberman.cpp" />
     <ClCompile Include="Detonador.cpp" />
     <ClCompile Include="Enemigo.cpp" />
     <ClCompile Include="Explosion.cpp" />
@@ -150,22 +150,37 @@
     <ClCompile Include="GameDirecctions.h" />
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="GamePawn.cpp" />
+    <ClCompile Include="MapGenerator.cpp" />
     <ClCompile Include="Muro.cpp" />
-    <ClCompile Include="MuroMetalico.cpp" />
+    <ClCompile Include="MuroCeramica.cpp" />
+    <ClCompile Include="MuroMetal.cpp" />
     <ClCompile Include="principal.cpp" />
+    <ClCompile Include="SueloCesped.cpp" />
+    <ClCompile Include="system\KeyboardInput.cpp" />
     <ClCompile Include="Texture.cpp" />
+    <ClCompile Include="Tile.cpp" />
+    <ClCompile Include="TilesGraph.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Bomber.h" />
+    <ClInclude Include="Bomberman.h" />
     <ClInclude Include="Detonador.h" />
     <ClInclude Include="Enemigo.h" />
     <ClInclude Include="Explosion.h" />
     <ClInclude Include="GameActor.h" />
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="GameObject.h" />
+    <ClInclude Include="GamePawn.h" />
+    <ClInclude Include="MapGenerator.h" />
     <ClInclude Include="Muro.h" />
-    <ClInclude Include="MuroMetalico.h" />
+    <ClInclude Include="MuroCeramica.h" />
+    <ClInclude Include="MuroMetal.h" />
+    <ClInclude Include="Pila.h" />
+    <ClInclude Include="SueloCesped.h" />
+    <ClInclude Include="system\KeyboardInput.h" />
     <ClInclude Include="Texture.h" />
+    <ClInclude Include="Tile.h" />
+    <ClInclude Include="TilesGraph.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="resources\bomber.bmp" />
