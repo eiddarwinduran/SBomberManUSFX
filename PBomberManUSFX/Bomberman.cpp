@@ -43,7 +43,9 @@ void Bomberman::update()
 	else if (keyboardInput->IsKeyOn(botonIzquierda)) {
 		direccionSiguiente = MOVE_DIRECTION_IZQUIERDA;
 	}
-		
+	else if (keyboardInput->IsKeyOn(botonSuperSalto)) {
+		direccionSiguiente = MOVE_DIRECTION_NONE;
+	}
 
 	//if (tileActual != nullptr && tileActual->getSueloCesped() != nullptr) {
 	//	//Camina normalmente, se revisan colisiones
@@ -89,7 +91,13 @@ void Bomberman::update()
 			posicionX = std::min(posicionX + velocidad, tileSiguiente->getPosicionTileX() * Tile::anchoTile);
 			//posicionX = posicionX + velocidad;
 			break;
+		case MOVE_DIRECTION_SuperSalto:
+			posicionY = posicionY * 34;
+			/*posicionY = posicionY - 34;*/
+			/*posicionX = posicion
+			posicionX = */
 		}
+
 
 		// Asignacion de coliciones
 		//

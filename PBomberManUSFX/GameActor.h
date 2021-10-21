@@ -39,6 +39,7 @@ protected:
 
 	Tile* tileActual;
 	Tile* tileSiguiente;
+	Tile* tileSalto;
 	
 	MoveDirection direccionActual;
 	MoveDirection direccionSiguiente;
@@ -84,6 +85,7 @@ public:
 	AnimationFrames* getFramesAnimacion() { return framesAnimacion; }*/
 	Tile* getTileActual() { return tileActual; }
 	Tile* getTileSiguiente() { return tileSiguiente; }
+	Tile* getTileSalto() { return tileSalto; }
 	MoveDirection getDireccionActual() { return direccionActual; }
 	MoveDirection getDireccionSiguiente() { return direccionSiguiente; }
 	/*int getframesDireccion() { return framesDireccion; }*/
@@ -110,6 +112,7 @@ public:
 	/*void setFramesAnimacion(AnimationFrames* _framesAnimacion) { framesAnimacion = _framesAnimacion; }*/
 	virtual void setTileActual(Tile* _tileNuevo) = 0;
 	void setTileSiguiente(Tile* _tileSiguiente) { tileSiguiente = _tileSiguiente; }
+	void setTileSalto(Tile* _tileSalto) { tileSalto = _tileSalto; }
 	void setDireccionActual(MoveDirection _direccionActual) { direccionActual = _direccionActual; }
 	void setDireccionSiguiente(MoveDirection _direccionSiguiente) { direccionSiguiente = _direccionSiguiente; }
 	/*void setFramesDireccion(int _framesDireccion) { framesDireccion = _framesDireccion; }*/

@@ -12,6 +12,7 @@ protected:
     SDL_Keycode botonAbajo = SDLK_DOWN;
     SDL_Keycode botonIzquierda = SDLK_LEFT;
     SDL_Keycode botonDerecha = SDLK_RIGHT;
+    SDL_Keycode botonSuperSalto = SDLK_x;
     
 public:
     // Constructores destructor
@@ -25,7 +26,7 @@ public:
     void setBotomAbajo(SDL_KeyCode _botonAbajo) { botonAbajo = _botonAbajo; }
     void setBotomDerecha(SDL_KeyCode _botonDerecha) { botonDerecha = _botonDerecha; }
     void setBotomIzquierda(SDL_KeyCode _botonIzquierda) { botonIzquierda = _botonIzquierda; }
-
+    void setBotomSuperSalto(SDL_KeyCode _botonSuperSalto) { botonSuperSalto = _botonSuperSalto; }
 
 
     // Metodos heredados

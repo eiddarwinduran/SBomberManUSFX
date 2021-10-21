@@ -26,6 +26,7 @@ GameActor::GameActor() :GameObject() {
 	textura = nullptr;
 	tileActual = nullptr;
 	tileSiguiente = nullptr;
+	tileSalto = nullptr;
 	direccionActual = MOVE_DIRECTION_NONE;
 	direccionSiguiente = MOVE_DIRECTION_NONE;
 
@@ -57,6 +58,7 @@ GameActor::GameActor(Texture* _textura, Tile* _tileActual) :GameObject() {
 	textura = _textura;
 	tileActual = _tileActual;
 	tileSiguiente = nullptr;
+	tileSalto = nullptr;
 	direccionActual = MOVE_DIRECTION_NONE;
 	direccionSiguiente = MOVE_DIRECTION_NONE;
 	colisionador = new SDL_Rect({ posicionX, posicionY, ancho, alto });
