@@ -28,6 +28,8 @@ GameActor::GameActor() :GameObject() {
 	tileSiguiente = nullptr;
 	direccionActual = MOVE_DIRECTION_NONE;
 	direccionSiguiente = MOVE_DIRECTION_NONE;
+
+	colisionador = new SDL_Rect({ 0, 0, ancho, alto });
 }
 
 
@@ -57,6 +59,7 @@ GameActor::GameActor(Texture* _textura, Tile* _tileActual) :GameObject() {
 	tileSiguiente = nullptr;
 	direccionActual = MOVE_DIRECTION_NONE;
 	direccionSiguiente = MOVE_DIRECTION_NONE;
+	colisionador = new SDL_Rect({ posicionX, posicionY, ancho, alto });
 }
 
 void GameActor::render()
@@ -65,6 +68,27 @@ void GameActor::render()
 		SDL_Rect* cuadroAnimacion = new SDL_Rect({ imagenX, imagenY, getAncho(), getAlto() });
 		textura->render(getPosicionX(), getPosicionY(), cuadroAnimacion);
 	}
+}
+
+bool GameActor::revisarColision(const SDL_Rect* _otroColisionador)
+{
+	if (_otroColisionador->x > colisionador->x + colisionador->w) {
+		return false;
+	}
+
+	if (_otroColisionador->y > colisionador->y + colisionador->h) {
+		return false;
+	}
+
+	if (_otroColisionador->x + _otroColisionador->w < colisionador->x) {
+		return false;
+	}
+
+	if (_otroColisionador->y + _otroColisionador->h < colisionador->y) {
+		return false;
+	}
+
+	return true;
 }
 
 bool GameActor::tratarDeMover(MoveDirection _direccionNueva) {

@@ -41,6 +41,8 @@ bool MapGenerator::crearObjetosJuego(string _path)
 	texturaMuroCeramica = new Texture();
 	Texture* texturaSueloCesped;
 	texturaSueloCesped = new Texture();
+	Texture* texturaItem;
+	texturaItem = new Texture();
 	
 	Texture::renderer = renderer;
 
@@ -49,14 +51,16 @@ bool MapGenerator::crearObjetosJuego(string _path)
 	texturaMuroCeramica->loadFromImage("resources/muro_ceramica.jpg");
 	texturaMuroMetal->loadFromImage("resources/muro_metal.jpg");
 	texturaSueloCesped->loadFromImage("resources/suelo_cesped.jpg");
+	texturaItem->loadFromImage("resources/item.png");
 	
 	int x = 0;
 	int y = 0;
+	int i = 0;
 	int bombermanPosicionX = -1;
 	int bombermanPosicionY = -1;
 	int bomberwomanPosicionX = -1;
 	int bomberwomanPosicionY = -1;
-
+	
 	while (getline(file, line)) {
 		vector<char> chars(line.begin(), line.end());
 		x = 0;
@@ -77,15 +81,23 @@ bool MapGenerator::crearObjetosJuego(string _path)
 						bomberwomanPosicionX = x;
 						bomberwomanPosicionY = y;
 					}
+					
 
 					//pilaObjetosJuegoMurosMetal.Insertar((GameActor*)objetoNuevo);
 
 					break;
 				case '1':
+					i++;
+					if (i <= 6) {
+						objetoNuevo = new Item(texturaItem, tileNuevo);
+					}
 					objetoNuevo = new MuroMetal(texturaMuroCeramica, tileNuevo);
+					
+
 					break;
 				case '2':
 					objetoNuevo = new MuroCeramica(texturaMuroMetal, tileNuevo);
+					
 					break;
 					/*case 'B':
 						objetoNuevo = new Bomberman(texturaBomberman, tileNuevo);

@@ -1,6 +1,8 @@
 #pragma once
-#include<iostream>
-#include <SDL.h>
+#include <iostream>
+#include <string>
+#include "Texture.h"
+#include "GameObjectType.h"
 using namespace std;
 
 class GameObject
@@ -9,6 +11,9 @@ private:
 	int  idGameObject;
 	string nombre;
 	bool eliminar;
+protected:
+	GameObjectType tipoObjeto;
+
 public:
 	static int numeroGameObjectCreados;
 	GameObject();

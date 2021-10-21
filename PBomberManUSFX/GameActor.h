@@ -45,9 +45,9 @@ protected:
 
 	/*int numeroFrame;
 	int contadorFrames;
-	int framesDireccion;
+	int framesDireccion;*/
 
-	SDL_Rect* colisionador;*/
+	SDL_Rect* colisionador;
 
 public:
 	// Propiedades
@@ -86,8 +86,8 @@ public:
 	Tile* getTileSiguiente() { return tileSiguiente; }
 	MoveDirection getDireccionActual() { return direccionActual; }
 	MoveDirection getDireccionSiguiente() { return direccionSiguiente; }
-	/*int getframesDireccion() { return framesDireccion; }
-	SDL_Rect* getColisionador() { return colisionador; }*/
+	/*int getframesDireccion() { return framesDireccion; }*/
+	SDL_Rect* getColisionador() { return colisionador; }
 
 	void setPosicionX(int _posicionX) { posicionX = _posicionX; }
 	void setPosicionY(int _posicionY) { posicionY = _posicionY; }
@@ -112,12 +112,12 @@ public:
 	void setTileSiguiente(Tile* _tileSiguiente) { tileSiguiente = _tileSiguiente; }
 	void setDireccionActual(MoveDirection _direccionActual) { direccionActual = _direccionActual; }
 	void setDireccionSiguiente(MoveDirection _direccionSiguiente) { direccionSiguiente = _direccionSiguiente; }
-	/*void setFramesDireccion(int _framesDireccion) { framesDireccion = _framesDireccion; }
-	void setColisionador(SDL_Rect* _colisionador) { colisionador = _colisionador; }*/
+	/*void setFramesDireccion(int _framesDireccion) { framesDireccion = _framesDireccion; }*/
+	void setColisionador(SDL_Rect* _colisionador) { colisionador = _colisionador; }
 
 	// Metodos varios
-	/*bool revisarColision(const SDL_Rect* _otroColisionador);
-	bool revisarColision(const SDL_Rect* _colisionador1, const SDL_Rect* _colisionador2);*/
+	bool revisarColision(const SDL_Rect* _otroColisionador);
+	bool revisarColision(const SDL_Rect* _colisionador1, const SDL_Rect* _colisionador2);
 	bool tratarDeMover(MoveDirection _direccionNueva);
 	/*
 	int restarEnergia();

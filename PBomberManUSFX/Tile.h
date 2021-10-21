@@ -11,6 +11,7 @@ class Bomberman;
 class MuroCeramica;
 class MuroMetal;
 class SueloCesped;
+class Item;
 
 class Tile
 {
@@ -19,6 +20,7 @@ private:
 	MuroCeramica* muroCeramica;
 	MuroMetal* muroMetal;
 	SueloCesped* sueloCesped;
+	Item* item;
 
 	int posicionTileX;
 	int posicionTileY;
@@ -36,6 +38,7 @@ public:
 	MuroCeramica* getMuroCeramica() { return muroCeramica; }
 	MuroMetal* getMuroMetal() { return muroMetal; }
 	SueloCesped* getSueloCesped() { return sueloCesped; }
+	Item* getMoneda() { return item; }
 	int getPosicionTileX() { return posicionTileX; }
 	int getPosicionTileY() { return posicionTileY; }
 
@@ -43,6 +46,7 @@ public:
 	void setMuroCeramica(MuroCeramica* _muroCeramica) { muroCeramica = _muroCeramica; }
 	void setMuroMetal(MuroMetal* _muroMetal) { muroMetal = _muroMetal; }
 	void setSueloCesped(SueloCesped* _sueloCesped) { sueloCesped = _sueloCesped; }
+	void setItem(Item* _item) { item = _item; }
 	void setPosicionTileX(int _posicionTileX) { posicionTileX = _posicionTileX; }
 	void setPosicionTileY(int _posicionTileY) { posicionTileY = _posicionTileY; }
 };
