@@ -12,12 +12,11 @@ protected:
     SDL_Keycode botonAbajo = SDLK_DOWN;
     SDL_Keycode botonIzquierda = SDLK_LEFT;
     SDL_Keycode botonDerecha = SDLK_RIGHT;
-    SDL_Keycode botonSuperSalto = SDLK_x;
     
 public:
     // Constructores destructor
     GamePawn();
-    GamePawn(Texture* _textura, Tile* _tileActual);
+    GamePawn(std::shared_ptr<SDL_Texture> _texture, SDL_Renderer* _renderer, Tile* _tileActual);
     ~GamePawn();
     // Metodos accesores
 
@@ -26,13 +25,14 @@ public:
     void setBotomAbajo(SDL_KeyCode _botonAbajo) { botonAbajo = _botonAbajo; }
     void setBotomDerecha(SDL_KeyCode _botonDerecha) { botonDerecha = _botonDerecha; }
     void setBotomIzquierda(SDL_KeyCode _botonIzquierda) { botonIzquierda = _botonIzquierda; }
-    void setBotomSuperSalto(SDL_KeyCode _botonSuperSalto) { botonSuperSalto = _botonSuperSalto; }
+
 
 
     // Metodos heredados
-    virtual void render();
-    virtual void update();
     virtual void handleEvent(SDL_Event* _event){};
+    virtual void render(SDL_Rect& _camara);
+    virtual void update(const unsigned int delta);
+
     virtual void deleteGameObjet();
 
     // Metodos especificos

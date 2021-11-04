@@ -39,6 +39,10 @@ private:
     bool enEjecucion;
 
     TilesGraph* tilesGraphGM;
+
+    SDL_Rect camera;
+    Uint32 lastTickTime = 0;
+
 public:
     // Constructores & destructores
     GameManager();

@@ -1,8 +1,6 @@
 #pragma once
-#include <iostream>
-#include <string>
-#include "Texture.h"
-#include "GameObjectType.h"
+#include<iostream>
+#include <SDL.h>
 using namespace std;
 
 class GameObject
@@ -11,11 +9,9 @@ private:
 	int  idGameObject;
 	string nombre;
 	bool eliminar;
-protected:
-	GameObjectType tipoObjeto;
-
 public:
 	static int numeroGameObjectCreados;
+	GameObject(SDL_Renderer* _renderer);
 	GameObject();
 	GameObject(string _nombre);
 
@@ -29,8 +25,8 @@ public:
 
 	// Metodos varios
 	//Metodos virtuales puros
-	virtual void render() = 0;
-	virtual void update() = 0;
+	virtual void render(SDL_Rect& _camera) = 0;
+	virtual void update(const unsigned int _delta) = 0;
 	virtual void handleEvent(SDL_Event* _event) = 0;
 	//Metodos virtuales
 	virtual void deleteGameObject() { eliminar = true; }

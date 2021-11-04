@@ -142,45 +142,54 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Animation.cpp" />
     <ClCompile Include="Bomberman.cpp" />
     <ClCompile Include="Detonador.cpp" />
     <ClCompile Include="Enemigo.cpp" />
     <ClCompile Include="Explosion.cpp" />
+    <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameActor.cpp" />
     <ClCompile Include="GameDirecctions.h" />
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GamePawn.cpp" />
-    <ClCompile Include="Item.cpp" />
     <ClCompile Include="MapGenerator.cpp" />
     <ClCompile Include="Muro.cpp" />
     <ClCompile Include="MuroCeramica.cpp" />
     <ClCompile Include="MuroMetal.cpp" />
     <ClCompile Include="principal.cpp" />
+    <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="SueloCesped.cpp" />
     <ClCompile Include="system\KeyboardInput.cpp" />
+    <ClCompile Include="Text.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="Tile.cpp" />
     <ClCompile Include="TilesGraph.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Animation.h" />
     <ClInclude Include="Bomberman.h" />
     <ClInclude Include="Detonador.h" />
     <ClInclude Include="Enemigo.h" />
     <ClInclude Include="Explosion.h" />
+    <ClInclude Include="Game.h" />
     <ClInclude Include="GameActor.h" />
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="GameObject.h" />
-    <ClInclude Include="GameObjectType.h" />
     <ClInclude Include="GamePawn.h" />
-    <ClInclude Include="Item.h" />
     <ClInclude Include="MapGenerator.h" />
     <ClInclude Include="Muro.h" />
     <ClInclude Include="MuroCeramica.h" />
     <ClInclude Include="MuroMetal.h" />
     <ClInclude Include="Pila.h" />
+    <ClInclude Include="Scene.h" />
+    <ClInclude Include="SceneManager.h" />
+    <ClInclude Include="Sprite.h" />
     <ClInclude Include="SueloCesped.h" />
     <ClInclude Include="system\KeyboardInput.h" />
+    <ClInclude Include="Text.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="Tile.h" />
     <ClInclude Include="TilesGraph.h" />

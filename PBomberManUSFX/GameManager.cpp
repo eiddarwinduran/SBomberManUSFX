@@ -8,6 +8,7 @@ GameManager::GameManager() {
 	keyboardInput = KeyboardInput::Instance();
 	enEjecucion = true;
 	tilesGraphGM = nullptr;
+	camera = { 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT };
 }
 
 bool GameManager::onInit() {
@@ -98,15 +99,20 @@ void GameManager::onEvent(SDL_Event* _event)
 }
 
 void GameManager::onLoop() {
+
+	Uint32 tickTime = SDL_GetTicks();
+	Uint32 delta = tickTime - lastTickTime;
+	lastTickTime = tickTime;
+
 	for (int i = 0; i < actoresJuego.size(); i++) {
-		actoresJuego[i]->update();
+		actoresJuego[i]->update(delta);
 	}
 }
 
 void GameManager::onRender() {
 	SDL_RenderClear(gRenderer);
 	for (int i = 0; i < actoresJuego.size(); i++) {
-		actoresJuego[i]->render();
+		actoresJuego[i]->render(camera);
 	}
 
 	SDL_RenderPresent(gRenderer);

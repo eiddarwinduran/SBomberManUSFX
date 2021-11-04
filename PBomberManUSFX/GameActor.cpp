@@ -2,14 +2,7 @@
 
 TilesGraph* GameActor::tilesGraph = nullptr;
 
-GameActor::GameActor() :GameObject() {
-	posicionX = 0;
-	posicionY = 0;
-	imagenX = 0;
-	imagenY = 0;
-	ancho = 34;
-	alto = 34;
-
+GameActor::GameActor() :GameObject() , Sprite(nullptr, nullptr){
 	solido = true;
 	indestructible = false;
 	visible = true;
@@ -21,27 +14,15 @@ GameActor::GameActor() :GameObject() {
 
 	velocidad = 1;
 	energia = 100;
-	vidas = 3;
+	vidas = 5;
 
-	textura = nullptr;
 	tileActual = nullptr;
 	tileSiguiente = nullptr;
-	tileSalto = nullptr;
 	direccionActual = MOVE_DIRECTION_NONE;
 	direccionSiguiente = MOVE_DIRECTION_NONE;
-
-	colisionador = new SDL_Rect({ 0, 0, ancho, alto });
 }
 
-
-GameActor::GameActor(Texture* _textura, Tile* _tileActual) :GameObject() {
-	posicionX = 0;
-	posicionY = 0;
-	imagenX = 0;
-	imagenY = 0;
-	ancho = 34;
-	alto = 34;
-
+GameActor::GameActor(std::shared_ptr<SDL_Texture> _textura, SDL_Renderer* _renderer, Tile* _tileActual) :GameObject(), Sprite(_textura, _renderer) {
 	solido = true;
 	indestructible = false;
 	visible = true;
@@ -55,43 +36,27 @@ GameActor::GameActor(Texture* _textura, Tile* _tileActual) :GameObject() {
 	energia = 100;
 	vidas = 3;
 
-	textura = _textura;
 	tileActual = _tileActual;
 	tileSiguiente = nullptr;
-	tileSalto = nullptr;
 	direccionActual = MOVE_DIRECTION_NONE;
 	direccionSiguiente = MOVE_DIRECTION_NONE;
-	colisionador = new SDL_Rect({ posicionX, posicionY, ancho, alto });
 }
 
-void GameActor::render()
-{
+
+void GameActor::render(SDL_Rect& _camera) {
 	if (visible) {
-		SDL_Rect* cuadroAnimacion = new SDL_Rect({ imagenX, imagenY, getAncho(), getAlto() });
-		textura->render(getPosicionX(), getPosicionY(), cuadroAnimacion);
+		Sprite::render(_camera);
 	}
 }
 
-bool GameActor::revisarColision(const SDL_Rect* _otroColisionador)
+void GameActor::update(const unsigned int delta)
 {
-	if (_otroColisionador->x > colisionador->x + colisionador->w) {
-		return false;
-	}
+	Sprite::update(delta);
 
-	if (_otroColisionador->y > colisionador->y + colisionador->h) {
-		return false;
-	}
+	animacion->play();
 
-	if (_otroColisionador->x + _otroColisionador->w < colisionador->x) {
-		return false;
-	}
-
-	if (_otroColisionador->y + _otroColisionador->h < colisionador->y) {
-		return false;
-	}
-
-	return true;
 }
+
 
 bool GameActor::tratarDeMover(MoveDirection _direccionNueva) {
 
