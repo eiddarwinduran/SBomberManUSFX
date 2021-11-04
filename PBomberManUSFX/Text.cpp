@@ -15,7 +15,7 @@ namespace bomberman
     void Text::setText( std::string& _text)
     {
         this->text = _text;
-        // reload texture to apply changes
+        // reload texture to apply change
         loadText();
     }
 
