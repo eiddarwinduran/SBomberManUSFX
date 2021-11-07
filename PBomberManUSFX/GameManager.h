@@ -12,6 +12,8 @@
 #include "MapGenerator.h"
 #include "system/KeyboardInput.h"
 #include "TilesGraph.h"
+#include "AssetManager.h"
+#include "SceneManager.h"
 
 using namespace std;
 
@@ -20,8 +22,11 @@ const int SCREEN_HEIGHT = 510;
   
 class GameManager
 {
+
 private:
     //The window we'll be rendering to
+    
+
     SDL_Window* gWindow;
 
     //The window renderer
@@ -45,8 +50,10 @@ private:
 
 public:
     // Constructores & destructores
+
     GameManager();
 
+   
     // Metodos especializados
     bool onInit();
     bool loadContent();

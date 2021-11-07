@@ -1,30 +1,30 @@
 #include <algorithm>
 
 #include "Scene.h"
-#include "GameManager.h"
+
 
 namespace bomberman
 {
-    Scene::Scene(Game* _game)
+    Scene::Scene(GameManager* _gm01)
     {
-        this->game = _game;
+        this->gm01 = _gm01;
         // set camera to up-left position
         camera = { 0, 0, 0, 0 };
     }
 
     Scene::~Scene() {}
 
-    void Scene::addObject(std::shared_ptr<GameObject> object)
+    void Scene::addObject(std::shared_ptr<Sprite> object)
     {
         objects.push_back(std::move(object));
     }
 
-    void Scene::insertObject(std::shared_ptr<GameObject> object, int position)
+    void Scene::insertObject(std::shared_ptr<Sprite> object, int position)
     {
         objects.insert(objects.begin() + position, object);
     }
 
-    void Scene::removeObject(std::shared_ptr<GameObject> object)
+    void Scene::removeObject(std::shared_ptr<Sprite> object)
     {
         objects.erase(std::remove(objects.begin(), objects.end(), object), objects.end());
     }

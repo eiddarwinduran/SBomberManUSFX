@@ -3,11 +3,12 @@
 
 #include <SDL.h>
 #include <vector>
-#include "GameObject.h"
+//#include "GameManager.h"
+#include "Sprite.h"
 
 namespace bomberman
 {
-    class Game;
+    class GameManager;
     /**
      * @brief Scene base class
      *
@@ -20,7 +21,7 @@ namespace bomberman
          *
          * @param game - pointer to game
          */
-        Scene(Game* game);
+        Scene(GameManager* gm01);
         /**
          * @brief Destroy the Scene object
          *
@@ -31,20 +32,20 @@ namespace bomberman
          *
          * @param object
          */
-        void addObject(std::shared_ptr<GameObject> object);
+        void addObject(std::shared_ptr<Sprite> object);
         /**
          * @brief Add object to scene for drawing to specific position
          *
          * @param object
          * @param position - position where to insert object
          */
-        void insertObject(std::shared_ptr<GameObject> object, int position);
+        void insertObject(std::shared_ptr<Sprite> object, int position);
         /**
          * @brief Remove object from scene
          *
          * @param object
          */
-        void removeObject(std::shared_ptr<GameObject> object);
+        void removeObject(std::shared_ptr<Sprite> object);
         /**
          * @brief Set the Camera object to specific position
          *
@@ -81,10 +82,10 @@ namespace bomberman
         void render();
 
     protected:
-        Game* game = nullptr; // pointer to game for use in all scenes
+        GameManager* gm01 = nullptr; // pointer to game for use in all scenes
 
     private:
-        std::vector<std::shared_ptr<GameObject>> objects; // objects to update and draw
+        std::vector<std::shared_ptr<Sprite>> objects; // objects to update and draw
         SDL_Rect camera;                              // camera position
     };
 } // namespace bomberman
