@@ -8,8 +8,6 @@
 #include <string>
 #include <unordered_map>
 
-namespace bomberman
-{
     /**
      * @brief Enumeration for Texture
      *
@@ -18,16 +16,7 @@ namespace bomberman
     enum class Texture : int
     {
         MenuBack,
-        Stone,
-        Grass,
-        Brick,
-        Player,
-        Enemy1,
-        Enemy2,
-        Enemy3,
-        Bomb,
-        Explosion,
-        Door
+        
     };
     /**
      * @brief Enumeration for Music
@@ -42,12 +31,12 @@ namespace bomberman
      * @brief Enumeration for Sounds
      *
      */
-    enum class SoundEnum : int
+   /* enum class SoundEnum : int
     {
         Win,
         Lose,
         Explosion
-    };
+    };*/
     /**
      * @brief Hash for Texture enum
      *
@@ -100,7 +89,7 @@ namespace bomberman
          * @param sound - sound enumerator
          * @return std::shared_ptr<Mix_Chunk> - loaded sound
          */
-        std::shared_ptr<Mix_Chunk> getSound(SoundEnum sound);
+        /*std::shared_ptr<Mix_Chunk> getSound(SoundEnum sound);*/
 
       private:
         /**
@@ -129,13 +118,13 @@ namespace bomberman
          * @param sound - sound enumerator
          * @param filePath - path to file with sound
          */
-        void loadSound(SoundEnum sound, const std::string& filePath);
+        /*void loadSound(SoundEnum sound, const std::string& filePath);*/
 
         std::shared_ptr<TTF_Font> font = nullptr;                                          // font
         std::unordered_map<Texture, std::shared_ptr<SDL_Texture>, EnumClassHash> textures; // map of textures
         //std::unordered_map<MusicEnum, std::shared_ptr<Mix_Music>, EnumClassHash> musics;       // map of music
-        std::unordered_map<SoundEnum, std::shared_ptr<Mix_Chunk>, EnumClassHash> sounds;       // map of sounds
+        /*std::unordered_map<SoundEnum, std::shared_ptr<Mix_Chunk>, EnumClassHash> sounds;*/       // map of sounds
     };
-} // namespace bomberman
+ // namespace bomberman
 
 #endif // _BOMBERMAN_MANAGERS_ASSET_MANAGER_H_

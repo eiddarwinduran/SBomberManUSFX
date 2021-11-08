@@ -3,35 +3,13 @@
 
 #include "AssetManager.h"
 
-namespace bomberman
-{
     void AssetManager::load(SDL_Renderer* renderer)
     {
         // load font
         loadFont();
         // load textures
-        loadTexture(renderer, Texture::MenuBack, "assets/menu_title.png");
-        loadTexture(renderer, Texture::Stone, "assets/stone.png");
-        loadTexture(renderer, Texture::Grass, "assets/grass.png");
-        loadTexture(renderer, Texture::Brick, "assets/brick.png");
-        loadTexture(renderer, Texture::Player, "assets/player.png");
-        loadTexture(renderer, Texture::Enemy1, "assets/enemy_1.png");
-        loadTexture(renderer, Texture::Enemy2, "assets/enemy_2.png");
-        loadTexture(renderer, Texture::Enemy3, "assets/enemy_3.png");
-        loadTexture(renderer, Texture::Bomb, "assets/bomb.png");
-        loadTexture(renderer, Texture::Explosion, "assets/explosion.png");
-        loadTexture(renderer, Texture::Door, "assets/door.png");
-        // load music
-       /* loadMusic(MusicEnum::MainMenu, "assets/main_theme.ogg");
-        loadMusic(MusicEnum::Level, "assets/level.ogg");*/
-        // load sounds
-        loadSound(SoundEnum::Win, "assets/win.wav");
-        loadSound(SoundEnum::Lose, "assets/lose.wav");
-        loadSound(SoundEnum::Explosion, "assets/explosion.wav");
-        if (auto explosionSound = getSound(SoundEnum::Explosion))
-        {
-            Mix_VolumeChunk(explosionSound.get(), 35);
-        }
+        loadTexture(renderer, Texture::MenuBack, "resources/menubomber.png");
+        
     }
 
     std::shared_ptr<TTF_Font> AssetManager::getFont() const
@@ -49,10 +27,10 @@ namespace bomberman
         return musics[music];
     }*/
 
-    std::shared_ptr<Mix_Chunk> AssetManager::getSound(SoundEnum sound)
+  /*  std::shared_ptr<Mix_Chunk> AssetManager::getSound(SoundEnum sound)
     {
         return sounds[sound];
-    }
+    }*/
 
     void AssetManager::loadFont()
     {
@@ -83,12 +61,12 @@ namespace bomberman
         }
     }*/
 
-    void AssetManager::loadSound(SoundEnum sound, const std::string& filePath)
+    /*void AssetManager::loadSound(SoundEnum sound, const std::string& filePath)
     {
         sounds[sound] = std::shared_ptr<Mix_Chunk>(Mix_LoadWAV(filePath.c_str()), Mix_FreeChunk);
         if(!sounds[sound])
         {
             std::cout << "loadSound Error: " << Mix_GetError() << std::endl;
         }
-    }
-} // namespace bomberman
+    }*/
+ // namespace bomberman

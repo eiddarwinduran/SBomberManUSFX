@@ -11,6 +11,36 @@ GameManager::GameManager() {
 	camera = { 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT };
 }
 
+void GameManager::stop()
+{
+	isRunning = false;
+}
+
+int GameManager::getWindowWidth() const
+{
+	return SCREEN_WIDTH;
+}
+
+int GameManager::getWindowHeight() const
+{
+	return SCREEN_HEIGHT;
+}
+
+SDL_Renderer* GameManager::getRenderer() const
+{
+	return renderer;
+}
+
+SceneManager* GameManager::getSceneManager() const
+{
+	return sceneManager;
+}
+
+AssetManager* GameManager::getAssetManager() const
+{
+	return assetManager;
+}
+
 bool GameManager::onInit() {
 
 	//Initialization flag

@@ -3,8 +3,6 @@
 #include "Scene.h"
 
 
-namespace bomberman
-{
     Scene::Scene(GameManager* _gm01)
     {
         this->gm01 = _gm01;
@@ -56,4 +54,4 @@ namespace bomberman
             object->render(camera);
         }
     }
-} // namespace bomberman
+// namespace bomberman

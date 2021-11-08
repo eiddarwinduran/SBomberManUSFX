@@ -8,8 +8,7 @@
 #include "Text.h"
 #include "Scene.h"
 
-namespace bomberman
-{
+
     /**
      * @brief Menu id
      *
@@ -38,12 +37,12 @@ namespace bomberman
          * @brief Called when scene was activated
          *
          */
-        virtual void onEnter() override;
+        /*virtual void onEnter() override;*/
         /**
          * @brief Called when scene was deactivated
          *
          */
-        virtual void onExit() override;
+      /*  virtual void onExit() override;*/
         /**
          * @brief Trigger on SDL2 event if scene is active
          *
@@ -69,9 +68,9 @@ namespace bomberman
         MenuItem currentSelectedMenu = MenuItem::Start; // current selected menu
 
         // const colors for menu selection
-        const SDL_Color colorStandard = {255, 255, 255, 255};
-        const SDL_Color colorPressed = {66, 134, 244, 255};
+         SDL_Color colorStandard = {255, 255, 255, 255};
+         SDL_Color colorPressed = {66, 134, 244, 255};
     };
-} // namespace bomberman
+
 
 #endif // _BOMBERMAN_SCENES_MENU_SCENE_H_

@@ -2,9 +2,9 @@
 
 #include "Text.h"
 
-namespace bomberman
-{
-    Text::Text(std::shared_ptr<TTF_Font> _font, SDL_Renderer* _renderer,  std::string& _text): Sprite(texture, renderer)
+
+    Text::Text(std::shared_ptr<TTF_Font> _font, SDL_Renderer* _renderer, const std::string& _text)
+    : Sprite( texture, renderer)
     {
         this->font = _font;
         this->text = _text;
@@ -12,14 +12,14 @@ namespace bomberman
         loadText();
     }
 
-    void Text::setText( std::string& _text)
+    void Text::setText(const std::string& _text)
     {
         this->text = _text;
         // reload texture to apply changes
         loadText();
     }
 
-    void Text::setColor( SDL_Color& _color)
+    void Text::setColor(const SDL_Color& _color)
     {
         this->color = _color;
         // reload texture to apply changes
@@ -62,4 +62,4 @@ namespace bomberman
         // free surface
         SDL_FreeSurface(surface);
     }
-} // namespace bomberman
+ 

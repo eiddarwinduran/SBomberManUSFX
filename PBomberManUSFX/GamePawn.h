@@ -1,6 +1,6 @@
 #pragma once
 #include "GameActor.h"
-#include "./system/KeyboardInput.h"
+#include "KeyboardInput.h"
 
 class GamePawn :
     public GameActor

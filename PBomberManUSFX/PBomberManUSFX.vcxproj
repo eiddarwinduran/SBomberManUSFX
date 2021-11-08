@@ -164,7 +164,7 @@
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="StageScene.cpp" />
     <ClCompile Include="SueloCesped.cpp" />
-    <ClCompile Include="system\KeyboardInput.cpp" />
+    <ClCompile Include="KeyboardInput.cpp" />
     <ClCompile Include="Text.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="Tile.cpp" />
@@ -192,7 +192,7 @@
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="StageScene.h" />
     <ClInclude Include="SueloCesped.h" />
-    <ClInclude Include="system\KeyboardInput.h" />
+    <ClInclude Include="KeyboardInput.h" />
     <ClInclude Include="Text.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="Tile.h" />

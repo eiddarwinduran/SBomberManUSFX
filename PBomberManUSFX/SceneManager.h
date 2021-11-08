@@ -8,15 +8,18 @@
 
 #include "Scene.h"
 
-namespace bomberman
-{
     /**
      * @brief Scene Manager
      *
      */
     class SceneManager
     {
-      public:
+    private:
+        std::unordered_map<std::string, std::shared_ptr<Scene>> scenes; // scenes
+        std::queue<std::shared_ptr<Scene>> removedScenes;               // removed scenes, for clean up
+        std::shared_ptr<Scene> currentScene = nullptr;// active scene
+
+    public:
         /**
          * @brief Construct a new Scene Manager object
          *
@@ -57,13 +60,10 @@ namespace bomberman
          * @brief draw objects of active scene
          *
          */
-        void render();
+        void render() const ;
 
-      private:
-        std::unordered_map<std::string, std::shared_ptr<Scene>> scenes; // scenes
-        std::queue<std::shared_ptr<Scene>> removedScenes;               // removed scenes, for clean up
-        std::shared_ptr<Scene> currentScene = nullptr;                  // active scene
+                     
     };
-} // namespace bomberman
+
 
 #endif // _BOMBERMAN_MANAGERS_SCENE_MANAGER_H_

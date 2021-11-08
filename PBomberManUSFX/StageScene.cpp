@@ -6,8 +6,7 @@
 #include "StageScene.h"
 #include "AssetManager.h"
 
-namespace bomberman
-{
+
     StageScene::StageScene(GameManager* _gm01, const unsigned int level, const unsigned int _score)
         : Scene(_gm01), stage(level), score(_score)
     {
@@ -27,9 +26,9 @@ namespace bomberman
         if(untilNextSceneTimer >= sceneTimer)
         {
             untilNextSceneTimer = 0;
-            gm01->getSceneManager()->addScene("level", std::make_shared<LevelScene>(gm01, stage, score));
+     /*       gm01->getSceneManager()->addScene("level", std::make_shared<LevelScene>(gm01, stage, score));*/
             gm01->getSceneManager()->activateScene("level");
             gm01->getSceneManager()->removeScene("stage");
         }
     }
-} // namespace bomberman
+

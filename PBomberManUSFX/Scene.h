@@ -1,13 +1,11 @@
-#ifndef _BOMBERMAN_SCENES_SCENE_H_
-#define _BOMBERMAN_SCENES_SCENE_H_
+#pragma once
 
 #include <SDL.h>
 #include <vector>
-//#include "GameManager.h"
+
 #include "Sprite.h"
 
-namespace bomberman
-{
+
     class GameManager;
     /**
      * @brief Scene base class
@@ -88,8 +86,8 @@ namespace bomberman
         std::vector<std::shared_ptr<Sprite>> objects; // objects to update and draw
         SDL_Rect camera;                              // camera position
     };
-} // namespace bomberman
+// namespace bomberman
 
-#endif // _BOMBERMAN_SCENES_SCENE_H_
+// _BOMBERMAN_SCENES_SCENE_H_
 
 

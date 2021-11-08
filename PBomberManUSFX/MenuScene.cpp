@@ -6,9 +6,9 @@
 //#include "../Scenes/LevelScene.h"
 #include "MenuScene.h"
 #include "StageScene.h"
+#include "AssetManager.h"
 
-namespace bomberman
-{
+
     // ++increment for menu id
     MenuItem& operator++(MenuItem& c)
     {
@@ -153,4 +153,4 @@ namespace bomberman
                 break;
         }
     }
-} // namespace bomberman
+

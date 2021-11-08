@@ -60,7 +60,7 @@
     <ClCompile Include="SueloCesped.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="system\KeyboardInput.cpp">
+    <ClCompile Include="KeyboardInput.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="Tile.cpp">
@@ -87,10 +87,10 @@
     <ClCompile Include="Text.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="AssetManager.cpp">
+    <ClCompile Include="MenuScene.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="MenuScene.cpp">
+    <ClCompile Include="AssetManager.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="StageScene.cpp">
@@ -137,7 +137,7 @@
     <ClInclude Include="SueloCesped.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="system\KeyboardInput.h">
+    <ClInclude Include="KeyboardInput.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="Tile.h">
@@ -167,10 +167,10 @@
     <ClInclude Include="Text.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="AssetManager.h">
+    <ClInclude Include="MenuScene.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="MenuScene.h">
+    <ClInclude Include="AssetManager.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="StageScene.h">

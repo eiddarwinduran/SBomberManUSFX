@@ -5,8 +5,7 @@
 
 #include "Sprite.h"
 
-namespace bomberman
-{
+
     /**
      * @brief Text object
      *
@@ -21,20 +20,19 @@ namespace bomberman
          * @param renderer - SDL2 renderer
          * @param text - text to draw on the screen
          */
-        Text(std::shared_ptr<TTF_Font> font, SDL_Renderer renderer, std::string& text);
+        Text(std::shared_ptr<TTF_Font> font, SDL_Renderer* renderer, const std::string& text);
         /**
          * @brief Set the Text
          *
          * @param text - text to draw on the screen
          */
-        Text(std::shared_ptr<TTF_Font> _font, SDL_Renderer* _renderer, std::string& _text);
-        void setText(std::string& text);
+        void setText(const std::string& text);
         /**
          * @brief Set the Color
          *
          * @param color - color of text
          */
-        void setColor(SDL_Color& color);
+        void setColor(const SDL_Color& color);
 
       private:
         /**
@@ -47,6 +45,6 @@ namespace bomberman
         std::string text;                         // text to display
         SDL_Color color = {255, 255, 255, 255};   // color of text
     };
-} // namespace bomberman
+   
 
 #endif // _BOMBERMAN_ENTITIES_TEXT_H_
